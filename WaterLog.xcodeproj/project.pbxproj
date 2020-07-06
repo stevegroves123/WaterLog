@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F3D83EB24B3B45400A5490B /* WaterLog WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4F3D83EA24B3B45400A5490B /* WaterLog WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F3D83F124B3B45400A5490B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D83EF24B3B45400A5490B /* Interface.storyboard */; };
+		4F3D83F324B3B45500A5490B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D83F224B3B45500A5490B /* Assets.xcassets */; };
+		4F3D83FA24B3B45500A5490B /* WaterLog WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F3D83F924B3B45500A5490B /* WaterLog WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F3D83FF24B3B45500A5490B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D83FE24B3B45500A5490B /* ContentView.swift */; };
+		4F3D840124B3B45500A5490B /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D840024B3B45500A5490B /* HostingController.swift */; };
+		4F3D840324B3B45500A5490B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D840224B3B45500A5490B /* ExtensionDelegate.swift */; };
+		4F3D840524B3B45500A5490B /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D840424B3B45500A5490B /* NotificationController.swift */; };
+		4F3D840724B3B45500A5490B /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D840624B3B45500A5490B /* NotificationView.swift */; };
+		4F3D840924B3B45600A5490B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D840824B3B45600A5490B /* Assets.xcassets */; };
+		4F3D840C24B3B45600A5490B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D840B24B3B45600A5490B /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F3D83EC24B3B45400A5490B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F3D83E024B3B45400A5490B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F3D83E924B3B45400A5490B;
+			remoteInfo = "WaterLog WatchKit App";
+		};
+		4F3D83FB24B3B45500A5490B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F3D83E024B3B45400A5490B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F3D83F824B3B45500A5490B;
+			remoteInfo = "WaterLog WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4F3D841424B3B45600A5490B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4F3D83FA24B3B45500A5490B /* WaterLog WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F3D841824B3B45600A5490B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				4F3D83EB24B3B45400A5490B /* WaterLog WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4F3D83E624B3B45400A5490B /* WaterLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F3D83EA24B3B45400A5490B /* WaterLog WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WaterLog WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F3D83F024B3B45400A5490B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		4F3D83F224B3B45500A5490B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F3D83F424B3B45500A5490B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F3D83F924B3B45500A5490B /* WaterLog WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WaterLog WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F3D83FE24B3B45500A5490B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4F3D840024B3B45500A5490B /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		4F3D840224B3B45500A5490B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		4F3D840424B3B45500A5490B /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		4F3D840624B3B45500A5490B /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		4F3D840824B3B45600A5490B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F3D840B24B3B45600A5490B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4F3D840D24B3B45600A5490B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F3D840E24B3B45600A5490B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F3D83F624B3B45500A5490B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F3D83DF24B3B45400A5490B = {
+			isa = PBXGroup;
+			children = (
+				4F3D83EE24B3B45400A5490B /* WaterLog WatchKit App */,
+				4F3D83FD24B3B45500A5490B /* WaterLog WatchKit Extension */,
+				4F3D83E724B3B45400A5490B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F3D83E724B3B45400A5490B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D83E624B3B45400A5490B /* WaterLog.app */,
+				4F3D83EA24B3B45400A5490B /* WaterLog WatchKit App.app */,
+				4F3D83F924B3B45500A5490B /* WaterLog WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F3D83EE24B3B45400A5490B /* WaterLog WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D83EF24B3B45400A5490B /* Interface.storyboard */,
+				4F3D83F224B3B45500A5490B /* Assets.xcassets */,
+				4F3D83F424B3B45500A5490B /* Info.plist */,
+			);
+			path = "WaterLog WatchKit App";
+			sourceTree = "<group>";
+		};
+		4F3D83FD24B3B45500A5490B /* WaterLog WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D83FE24B3B45500A5490B /* ContentView.swift */,
+				4F3D840024B3B45500A5490B /* HostingController.swift */,
+				4F3D840224B3B45500A5490B /* ExtensionDelegate.swift */,
+				4F3D840424B3B45500A5490B /* NotificationController.swift */,
+				4F3D840624B3B45500A5490B /* NotificationView.swift */,
+				4F3D840824B3B45600A5490B /* Assets.xcassets */,
+				4F3D840D24B3B45600A5490B /* Info.plist */,
+				4F3D840E24B3B45600A5490B /* PushNotificationPayload.apns */,
+				4F3D840A24B3B45600A5490B /* Preview Content */,
+			);
+			path = "WaterLog WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		4F3D840A24B3B45600A5490B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D840B24B3B45600A5490B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F3D83E524B3B45400A5490B /* WaterLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F3D841924B3B45600A5490B /* Build configuration list for PBXNativeTarget "WaterLog" */;
+			buildPhases = (
+				4F3D83E424B3B45400A5490B /* Resources */,
+				4F3D841824B3B45600A5490B /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F3D83ED24B3B45400A5490B /* PBXTargetDependency */,
+			);
+			name = WaterLog;
+			productName = WaterLog;
+			productReference = 4F3D83E624B3B45400A5490B /* WaterLog.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		4F3D83E924B3B45400A5490B /* WaterLog WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F3D841524B3B45600A5490B /* Build configuration list for PBXNativeTarget "WaterLog WatchKit App" */;
+			buildPhases = (
+				4F3D83E824B3B45400A5490B /* Resources */,
+				4F3D841424B3B45600A5490B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F3D83FC24B3B45500A5490B /* PBXTargetDependency */,
+			);
+			name = "WaterLog WatchKit App";
+			productName = "WaterLog WatchKit App";
+			productReference = 4F3D83EA24B3B45400A5490B /* WaterLog WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		4F3D83F824B3B45500A5490B /* WaterLog WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F3D841124B3B45600A5490B /* Build configuration list for PBXNativeTarget "WaterLog WatchKit Extension" */;
+			buildPhases = (
+				4F3D83F524B3B45500A5490B /* Sources */,
+				4F3D83F624B3B45500A5490B /* Frameworks */,
+				4F3D83F724B3B45500A5490B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WaterLog WatchKit Extension";
+			productName = "WaterLog WatchKit Extension";
+			productReference = 4F3D83F924B3B45500A5490B /* WaterLog WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F3D83E024B3B45400A5490B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "steve groves";
+				TargetAttributes = {
+					4F3D83E524B3B45400A5490B = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					4F3D83E924B3B45400A5490B = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					4F3D83F824B3B45500A5490B = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 4F3D83E324B3B45400A5490B /* Build configuration list for PBXProject "WaterLog" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F3D83DF24B3B45400A5490B;
+			productRefGroup = 4F3D83E724B3B45400A5490B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F3D83E524B3B45400A5490B /* WaterLog */,
+				4F3D83E924B3B45400A5490B /* WaterLog WatchKit App */,
+				4F3D83F824B3B45500A5490B /* WaterLog WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F3D83E424B3B45400A5490B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F3D83E824B3B45400A5490B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F3D83F324B3B45500A5490B /* Assets.xcassets in Resources */,
+				4F3D83F124B3B45400A5490B /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F3D83F724B3B45500A5490B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F3D840C24B3B45600A5490B /* Preview Assets.xcassets in Resources */,
+				4F3D840924B3B45600A5490B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F3D83F524B3B45500A5490B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F3D840124B3B45500A5490B /* HostingController.swift in Sources */,
+				4F3D83FF24B3B45500A5490B /* ContentView.swift in Sources */,
+				4F3D840524B3B45500A5490B /* NotificationController.swift in Sources */,
+				4F3D840324B3B45500A5490B /* ExtensionDelegate.swift in Sources */,
+				4F3D840724B3B45500A5490B /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F3D83ED24B3B45400A5490B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F3D83E924B3B45400A5490B /* WaterLog WatchKit App */;
+			targetProxy = 4F3D83EC24B3B45400A5490B /* PBXContainerItemProxy */;
+		};
+		4F3D83FC24B3B45500A5490B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F3D83F824B3B45500A5490B /* WaterLog WatchKit Extension */;
+			targetProxy = 4F3D83FB24B3B45500A5490B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4F3D83EF24B3B45400A5490B /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F3D83F024B3B45400A5490B /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F3D840F24B3B45600A5490B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F3D841024B3B45600A5490B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F3D841224B3B45600A5490B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WaterLog WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = W6CU3DBQX2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WaterLog WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Pinnacle.WaterLog.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		4F3D841324B3B45600A5490B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WaterLog WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = W6CU3DBQX2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WaterLog WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Pinnacle.WaterLog.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		4F3D841624B3B45600A5490B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6CU3DBQX2;
+				IBSC_MODULE = WaterLog_WatchKit_Extension;
+				INFOPLIST_FILE = "WaterLog WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = Pinnacle.WaterLog.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		4F3D841724B3B45600A5490B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6CU3DBQX2;
+				IBSC_MODULE = WaterLog_WatchKit_Extension;
+				INFOPLIST_FILE = "WaterLog WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = Pinnacle.WaterLog.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		4F3D841A24B3B45600A5490B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6CU3DBQX2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Pinnacle.WaterLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4F3D841B24B3B45600A5490B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W6CU3DBQX2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Pinnacle.WaterLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F3D83E324B3B45400A5490B /* Build configuration list for PBXProject "WaterLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F3D840F24B3B45600A5490B /* Debug */,
+				4F3D841024B3B45600A5490B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F3D841124B3B45600A5490B /* Build configuration list for PBXNativeTarget "WaterLog WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F3D841224B3B45600A5490B /* Debug */,
+				4F3D841324B3B45600A5490B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F3D841524B3B45600A5490B /* Build configuration list for PBXNativeTarget "WaterLog WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F3D841624B3B45600A5490B /* Debug */,
+				4F3D841724B3B45600A5490B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F3D841924B3B45600A5490B /* Build configuration list for PBXNativeTarget "WaterLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F3D841A24B3B45600A5490B /* Debug */,
+				4F3D841B24B3B45600A5490B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F3D83E024B3B45400A5490B /* Project object */;
+}
