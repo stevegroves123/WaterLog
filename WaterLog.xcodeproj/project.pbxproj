@@ -19,6 +19,8 @@
 		4F3D840924B3B45600A5490B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D840824B3B45600A5490B /* Assets.xcassets */; };
 		4F3D840C24B3B45600A5490B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D840B24B3B45600A5490B /* Preview Assets.xcassets */; };
 		4F3D841F24B4F89200A5490B /* chooseWaterValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D841E24B4F89200A5490B /* chooseWaterValue.swift */; };
+		4F3D842524B515C800A5490B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D842424B515C800A5490B /* ComplicationController.swift */; };
+		4F3D842624B519C800A5490B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D842224B5113B00A5490B /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,9 @@
 		4F3D840D24B3B45600A5490B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3D840E24B3B45600A5490B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		4F3D841E24B4F89200A5490B /* chooseWaterValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseWaterValue.swift; sourceTree = "<group>"; };
+		4F3D842024B5113B00A5490B /* WaterLog WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WaterLog WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		4F3D842224B5113B00A5490B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		4F3D842424B515C800A5490B /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3D842624B519C800A5490B /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +105,7 @@
 				4F3D83EE24B3B45400A5490B /* WaterLog WatchKit App */,
 				4F3D83FD24B3B45500A5490B /* WaterLog WatchKit Extension */,
 				4F3D83E724B3B45400A5490B /* Products */,
+				4F3D842124B5113B00A5490B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,10 +132,12 @@
 		4F3D83FD24B3B45500A5490B /* WaterLog WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4F3D842024B5113B00A5490B /* WaterLog WatchKit Extension.entitlements */,
 				4F3D840024B3B45500A5490B /* HostingController.swift */,
 				4F3D840224B3B45500A5490B /* ExtensionDelegate.swift */,
 				4F3D840424B3B45500A5490B /* NotificationController.swift */,
 				4F3D83FE24B3B45500A5490B /* ContentView.swift */,
+				4F3D842424B515C800A5490B /* ComplicationController.swift */,
 				4F3D841E24B4F89200A5490B /* chooseWaterValue.swift */,
 				4F3D840624B3B45500A5490B /* NotificationView.swift */,
 				4F3D840824B3B45600A5490B /* Assets.xcassets */,
@@ -145,6 +154,14 @@
 				4F3D840B24B3B45600A5490B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4F3D842124B5113B00A5490B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D842224B5113B00A5490B /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +296,7 @@
 				4F3D83FF24B3B45500A5490B /* ContentView.swift in Sources */,
 				4F3D841F24B4F89200A5490B /* chooseWaterValue.swift in Sources */,
 				4F3D840524B3B45500A5490B /* NotificationController.swift in Sources */,
+				4F3D842524B515C800A5490B /* ComplicationController.swift in Sources */,
 				4F3D840324B3B45500A5490B /* ExtensionDelegate.swift in Sources */,
 				4F3D840724B3B45500A5490B /* NotificationView.swift in Sources */,
 			);
@@ -427,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WaterLog WatchKit Extension/WaterLog WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterLog WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = W6CU3DBQX2;
@@ -443,7 +462,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Debug;
 		};
@@ -451,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "WaterLog WatchKit Extension/WaterLog WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterLog WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = W6CU3DBQX2;
@@ -467,7 +487,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
 			};
 			name = Release;
 		};
@@ -486,7 +506,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Debug;
 		};
@@ -505,7 +525,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
