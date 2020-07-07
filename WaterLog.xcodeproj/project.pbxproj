@@ -18,6 +18,7 @@
 		4F3D840724B3B45500A5490B /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D840624B3B45500A5490B /* NotificationView.swift */; };
 		4F3D840924B3B45600A5490B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D840824B3B45600A5490B /* Assets.xcassets */; };
 		4F3D840C24B3B45600A5490B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D840B24B3B45600A5490B /* Preview Assets.xcassets */; };
+		4F3D841F24B4F89200A5490B /* chooseWaterValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D841E24B4F89200A5490B /* chooseWaterValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		4F3D840B24B3B45600A5490B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4F3D840D24B3B45600A5490B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3D840E24B3B45600A5490B /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		4F3D841E24B4F89200A5490B /* chooseWaterValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseWaterValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,10 +125,11 @@
 		4F3D83FD24B3B45500A5490B /* WaterLog WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				4F3D83FE24B3B45500A5490B /* ContentView.swift */,
 				4F3D840024B3B45500A5490B /* HostingController.swift */,
 				4F3D840224B3B45500A5490B /* ExtensionDelegate.swift */,
 				4F3D840424B3B45500A5490B /* NotificationController.swift */,
+				4F3D83FE24B3B45500A5490B /* ContentView.swift */,
+				4F3D841E24B4F89200A5490B /* chooseWaterValue.swift */,
 				4F3D840624B3B45500A5490B /* NotificationView.swift */,
 				4F3D840824B3B45600A5490B /* Assets.xcassets */,
 				4F3D840D24B3B45600A5490B /* Info.plist */,
@@ -274,6 +277,7 @@
 			files = (
 				4F3D840124B3B45500A5490B /* HostingController.swift in Sources */,
 				4F3D83FF24B3B45500A5490B /* ContentView.swift in Sources */,
+				4F3D841F24B4F89200A5490B /* chooseWaterValue.swift in Sources */,
 				4F3D840524B3B45500A5490B /* NotificationController.swift in Sources */,
 				4F3D840324B3B45500A5490B /* ExtensionDelegate.swift in Sources */,
 				4F3D840724B3B45500A5490B /* NotificationView.swift in Sources */,
