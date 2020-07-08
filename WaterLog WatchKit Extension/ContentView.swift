@@ -33,6 +33,11 @@ struct ContentView: View {
             Text("\(self.waterDrankToday*100)")
                 .foregroundColor(.blue)
                 .font(.title)
+// added to reset the values - could be used for new day/new week
+                .onTapGesture(count: 2, perform: {
+                    self.waterDrankToday = 0
+                    self.waterValue = 1.0
+                })
             Spacer()
         }
     }
