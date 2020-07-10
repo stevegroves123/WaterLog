@@ -6,6 +6,7 @@
 //  Copyright © 2020 steve groves. All rights reserved.
 //
 
+import Foundation
 import ClockKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
@@ -22,15 +23,19 @@ func getCurrentTimelineEntry(
  
     switch complication.family {
     case .modularSmall:
-        let template = CLKComplicationTemplateModularSmallStackText()
-        template.line1TextProvider = CLKSimpleTextProvider(text: "+W")
-        template.line2TextProvider = CLKSimpleTextProvider(text: "TW")
+//        let template = CLKComplicationTemplateModularSmallStackText()
+//        template.line1TextProvider = CLKSimpleTextProvider(text: "+W")
+//        template.line2TextProvider = CLKSimpleTextProvider(text: "TW")
+        let template = CLKComplicationTemplateModularSmallSimpleImage()
+        template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Complication/Modular")!)
         entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
  
     case .circularSmall:
-        let template = CLKComplicationTemplateCircularSmallStackText()
-        template.line1TextProvider = CLKSimpleTextProvider(text: "+W")
-        template.line2TextProvider = CLKSimpleTextProvider(text: "TW")
+//        let template = CLKComplicationTemplateCircularSmallStackText()
+//        template.line1TextProvider = CLKSimpleTextProvider(text: "+W")
+//        template.line2TextProvider = CLKSimpleTextProvider(text: "TW")
+        let template = CLKComplicationTemplateCircularSmallSimpleImage()
+        template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Complication/Circular")!)
         entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
  
     default:
@@ -46,15 +51,19 @@ func getCurrentTimelineEntry(
     {
         switch complication.family {
         case .modularSmall:
-            let template = CLKComplicationTemplateModularSmallStackText()
-            template.line1TextProvider = CLKSimpleTextProvider(text: "+W")
-            template.line2TextProvider = CLKSimpleTextProvider(text: "TW")
+//            let template = CLKComplicationTemplateModularSmallStackText()
+//            template.line1TextProvider = CLKSimpleTextProvider(text: "+W")
+//            template.line2TextProvider = CLKSimpleTextProvider(text: "TW")
+              let template = CLKComplicationTemplateModularSmallSimpleImage()
+              template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Complication/Modular")!)
             handler(template)
      
         case .circularSmall:
-            let template = CLKComplicationTemplateCircularSmallStackText()
-            template.line1TextProvider = CLKSimpleTextProvider(text: "+W")
-            template.line2TextProvider = CLKSimpleTextProvider(text: "TW")
+//            let template = CLKComplicationTemplateCircularSmallStackText()
+//            template.line1TextProvider = CLKSimpleTextProvider(text: "+W")
+//            template.line2TextProvider = CLKSimpleTextProvider(text: "TW")
+            let template = CLKComplicationTemplateCircularSmallSimpleImage()
+            template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Complication/Circular")!)
             handler(template)
      
         default:
