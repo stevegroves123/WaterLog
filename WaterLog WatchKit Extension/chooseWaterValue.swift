@@ -16,7 +16,7 @@ struct chooseWaterValue: View {
             Text("\(Int(waterValue)*100)")
             }
             .focusable(true)
-            .digitalCrownRotation($waterValue, from: 1, through: 10, by: 1, sensitivity: .medium, isContinuous: false, isHapticFeedbackEnabled: true)
+            .digitalCrownRotation($waterValue, from: 1, through: 10, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
     }
 }
 

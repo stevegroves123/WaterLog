@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import HealthKit
 
 struct ContentView: View {
     @State var waterValue = 1.0
@@ -18,7 +19,8 @@ struct ContentView: View {
             chooseWaterValue(waterValue: self.$waterValue)
             Button(action:
                 {
-                    self.waterDrankToday = self.waterDrankToday + Int(self.waterValue)
+                    self.waterDrankToday = self.waterDrankToday + Int(self.waterValue);
+                    self.writeWater()
                 }){
                     HStack {
                         Image(systemName: "plus.circle")
@@ -39,6 +41,32 @@ struct ContentView: View {
                     self.waterValue = 1.0
                 })
             Spacer()
+        }.onAppear(perform: { self.checkHK() })
+    }
+    
+    func checkHK() {
+        if HKHealthStore.isHealthDataAvailable() {
+            // Add code to use HealthKit here.
+            let healthStore = HKHealthStore()
+            let allTypes = Set([HKObjectType.quantityType(forIdentifier: .dietaryWater)!])
+            healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
+                if !success { print("It went wrong") }
+            }
+        }
+    }
+    
+    func writeWater() {
+        guard let waterType = HKSampleType.quantityType(forIdentifier: .dietaryWater) else {
+            print("Sample type not available")
+            return
+        }
+        
+        let waterQuantity = HKQuantity(unit: HKUnit.literUnit(with: .milli), doubleValue: Double(Int(waterValue)*100))
+        let today = Date()
+        let waterQuantitySample = HKQuantitySample(type: waterType, quantity: waterQuantity, start: today, end: today)
+        
+        HKHealthStore().save(waterQuantitySample) { (success, error) in
+            print("HK write finished - success: \(success); error: \(String(describing: error))")
         }
     }
 }
