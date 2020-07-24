@@ -23,7 +23,6 @@ struct ContentView: View {
                 {
                     self.writeWater()
                     self.readWater()
-                    
                 }){
                     HStack {
                         Image(systemName: "plus.circle")
@@ -58,27 +57,39 @@ struct ContentView: View {
         }
     }
     
-    // query to read all water vales for the past 24 hrs and make waterTotal the sum
+    // query to read all water values for today (23:00hrs toand make waterTotal the sum
     func readWater() {
         guard let waterType = HKSampleType.quantityType(forIdentifier: .dietaryWater) else {
             print("Unable to read the water")
             return
         }
         
-        let todaysWater = HKQuery.predicateForSamples(withStart: (Date()-86400), end: Date(), options: .strictEndDate)
-        let waterQuery = HKSampleQuery(sampleType: waterType,predicate: todaysWater, limit: HKObjectQueryNoLimit, sortDescriptors: nil) {
-                (query, sample, error) in
-            
-                guard error == nil,
-                    let quantityWaterSamples = sample as? [HKQuantitySample] else {
-                      print("Something went wrong: \(String(describing: error))")
-                        return
-            }
-            self.waterTotal = Int(quantityWaterSamples.reduce(0.0) { $0 + $1.quantity.doubleValue(for: HKUnit.literUnit(with: .milli)) })
-            print("read water - ok")
-            DispatchQueue.main.async {
-            }
+        let calender = NSCalendar.current
+        let components = calender.dateComponents([.year, .month, .day], from: Date())
+        
+        guard let startDate = calender.date(from: components) else {
+            fatalError("*** Unable to create a start date ***")
         }
+        
+        guard let endDate = calender.date(byAdding: .day, value: 1, to: startDate) else {
+            fatalError("--- Unable to create an end date ---")
+        }
+        
+        let todaysWater = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options:[])
+        let waterQuery = HKSampleQuery(sampleType: waterType,
+                                       predicate: todaysWater,
+                                       limit: Int(HKObjectQueryNoLimit),
+                                       sortDescriptors: nil) { (query, results, error) in
+
+                guard error == nil,
+                    let quantityWaterSamples = results as? [HKQuantitySample] else {
+                        print("Something went wrong: \(String(describing: error))")
+                        return
+                        }
+                            self.waterTotal = Int(quantityWaterSamples.reduce(0.0) { $0 + $1.quantity.doubleValue(for: HKUnit.literUnit(with: .milli)) })
+                                        DispatchQueue.main.async {
+                                        }
+            }
         HKHealthStore().execute(waterQuery)
     }
     
