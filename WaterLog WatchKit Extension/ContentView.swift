@@ -8,33 +8,41 @@
 
 import SwiftUI
 import HealthKit
+import UIKit
 
 struct ContentView: View {
     @State var waterValue = 1.0
-    @State var waterDrankToday = 0
     @State var waterTotal = 0
+    
+    struct customButtonStyle: ButtonStyle {
+        func makeBody(configuration: Configuration) -> some View {
+            configuration.label
+                .padding()
+                .background(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.blue]), startPoint: .top, endPoint: .bottom))
+                .cornerRadius(10.0)
+                .scaleEffect(configuration.isPressed ? 1.4 : 1.0)
+        }
+    }
     
     var body: some View {
         VStack{
-//            readWater()
+            Spacer()
             Text("Water to add")
             chooseWaterValue(waterValue: self.$waterValue)
             Button(action:
                 {
                     self.writeWater()
                     self.readWater()
-                }){
+            }) {
                     HStack {
                         Image(systemName: "plus.circle")
                             .foregroundColor(Color.black)
                             .font(.headline)
-                        Text("water")
+                        Text("Water")
                             .foregroundColor(Color.black)
                     }
-            }
-                .background(Color.gray)
-                .cornerRadius(15)
-                .padding()
+            }.buttonStyle(customButtonStyle())
+                
             Spacer()
             Text("Total Water")
             Text("\(self.waterTotal)")
@@ -57,7 +65,7 @@ struct ContentView: View {
         }
     }
     
-    // query to read all water values for today (23:00hrs toand make waterTotal the sum
+    // query to read all water values for today (23:00hrs) to make waterTotal the sum
     func readWater() {
         guard let waterType = HKSampleType.quantityType(forIdentifier: .dietaryWater) else {
             print("Unable to read the water")
