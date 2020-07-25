@@ -1,4 +1,6 @@
 # WaterLog
-Basic app to record water
+Basic Apple watch app to record water.
 
-Very simple app that allows the user to log the water they have drunk
+The user selects the amount, from 100 to 1000ml using the digital crown, then taps the  " + Water " button to save the entry.
+
+A record of today's water is shown on watch app to guide the user in reaching their water targets
