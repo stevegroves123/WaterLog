@@ -17,17 +17,18 @@ struct ContentView: View {
     struct customButtonStyle: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
-                .padding()
+                .frame(width: 100, height: 40, alignment: .center)
                 .background(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.blue]), startPoint: .top, endPoint: .bottom))
                 .cornerRadius(10.0)
-                .scaleEffect(configuration.isPressed ? 1.4 : 1.0)
+                .scaleEffect(configuration.isPressed ? 1.3 : 1.0)
+            
         }
     }
     
     var body: some View {
         VStack{
             Spacer()
-            Text("Water to add")
+            Text("Add water")
             chooseWaterValue(waterValue: self.$waterValue)
             Button(action:
                 {

@@ -14,6 +14,7 @@ struct chooseWaterValue: View {
     var body: some View {
         VStack {
             Text("\(Int(waterValue)*100)")
+                .font(.headline)
             }
             .focusable(true)
             .digitalCrownRotation($waterValue, from: 1, through: 10, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
