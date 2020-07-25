@@ -17,7 +17,7 @@ struct ContentView: View {
     struct customButtonStyle: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
-                .frame(width: 100, height: 40, alignment: .center)
+                .frame(width: 120, height: 50, alignment: .center)
                 .background(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.blue]), startPoint: .top, endPoint: .bottom))
                 .cornerRadius(10.0)
                 .scaleEffect(configuration.isPressed ? 1.3 : 1.0)
