@@ -17,7 +17,7 @@ struct chooseWaterValue: View {
                 .font(.headline)
             }
             .focusable(true)
-            .digitalCrownRotation($waterValue, from: 1, through: 10, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
+            .digitalCrownRotation($waterValue, from: 0, through: 10, by: 1, sensitivity: .low, isContinuous: false, isHapticFeedbackEnabled: true)
     }
 }
 

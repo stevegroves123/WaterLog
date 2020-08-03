@@ -32,7 +32,10 @@ struct ContentView: View {
             chooseWaterValue(waterValue: self.$waterValue)
             Button(action:
                 {
-                    self.writeWater()
+                    if self.waterValue > 0
+                        {
+                        self.writeWater()
+                        }
                     self.readWater()
             }) {
                     HStack {
