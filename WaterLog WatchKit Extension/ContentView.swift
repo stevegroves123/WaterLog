@@ -28,8 +28,10 @@ struct ContentView: View {
     var body: some View {
         VStack{
             Spacer()
-            Text("Add water")
-            chooseWaterValue(waterValue: self.$waterValue)
+            HStack {
+                Text("Add water")
+                chooseWaterValue(waterValue: self.$waterValue)
+            }
             Button(action:
                 {
                     if self.waterValue > 0
@@ -49,9 +51,14 @@ struct ContentView: View {
                 
             Spacer()
             Text("Total Water")
-            Text("\(self.waterTotal)")
+            HStack {
+               Text("\(self.waterTotal)")
                 .foregroundColor(.blue)
                 .font(.title)
+            Text("ml")
+                .font(.body)
+            }
+            
             Spacer()
         }.onAppear(perform: { self.checkHK() })
     }
