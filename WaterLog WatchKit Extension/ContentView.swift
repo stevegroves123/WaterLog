@@ -54,7 +54,6 @@ struct ContentView: View {
                             .foregroundColor(Color.black)
                     }
             }.buttonStyle(customButtonStyle())
-//            Spacer()
             VStack {
                 Text("Total Water")
                 HStack {
