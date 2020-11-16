@@ -11,7 +11,7 @@ import HealthKit
 import UIKit
 
 struct ContentView: View {
-    @State var waterValue = 1.0
+    @State var waterValue = 0.00
     @State var waterTotal = 0
     
     struct customButtonStyle: ButtonStyle {
@@ -30,8 +30,14 @@ struct ContentView: View {
             Spacer()
             HStack {
                 Text("Add water")
+                    .font(.body)
                 chooseWaterValue(waterValue: self.$waterValue)
+                Text("ml")
             }
+                .padding(.all)
+                .border(Color.blue, width: 2)
+                .cornerRadius(5.0)
+                
             Button(action:
                 {
                     if self.waterValue > 0
@@ -48,17 +54,17 @@ struct ContentView: View {
                             .foregroundColor(Color.black)
                     }
             }.buttonStyle(customButtonStyle())
-                
-            Spacer()
-            Text("Total Water")
-            HStack {
-               Text("\(self.waterTotal)")
-                .foregroundColor(.blue)
-                .font(.title)
-            Text("ml")
-                .font(.body)
+//            Spacer()
+            VStack {
+                Text("Total Water")
+                HStack {
+                   Text("\(self.waterTotal)")
+                    .foregroundColor(.blue)
+                    .font(.title)
+                Text("ml")
+                    .font(.body)
+                }
             }
-            
             Spacer()
         }.onAppear(perform: { self.checkHK() })
     }
@@ -105,7 +111,7 @@ struct ContentView: View {
                         print("Something went wrong: \(String(describing: error))")
                         return
                         }
-                            self.waterTotal = Int(quantityWaterSamples.reduce(0.0) { $0 + $1.quantity.doubleValue(for: HKUnit.literUnit(with: .milli)) })
+                                        self.waterTotal = Int(quantityWaterSamples.reduce(0.0) { $0 + $1.quantity.doubleValue(for: HKUnit.literUnit(with: .milli)) })
                                         DispatchQueue.main.async {
                                         }
             }
@@ -119,7 +125,7 @@ struct ContentView: View {
             return
         }
         
-        let waterQuantity = HKQuantity(unit: HKUnit.literUnit(with: .milli), doubleValue: Double(Int(waterValue)*100))
+        let waterQuantity = HKQuantity(unit: HKUnit.literUnit(with: .milli), doubleValue: Double(Int(waterValue)*10))
         let waterQuantitySample = HKQuantitySample(type: waterType, quantity: waterQuantity, start: Date(), end: Date())
 
         HKHealthStore().save(waterQuantitySample) { (success, error) in
