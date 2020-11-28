@@ -9,20 +9,25 @@
 import SwiftUI
 
 struct chooseWaterValue: View {
-    @Binding var waterValue: Double
+    @Binding var waterValue: Int
+    @Binding var values: Array<Int>
     
-    var body: some View {
-        VStack {
-            Text("\(Int(waterValue)*10)")
-                .font(.headline)
-            }
-            .focusable(true)
-            .digitalCrownRotation($waterValue, from: 0, through: 100, by: 5, sensitivity: .medium, isContinuous: false, isHapticFeedbackEnabled: true)
-    }
+            var body: some View {
+                VStack {
+                    Picker(selection: $waterValue, label: Text("Water")) {
+                        ForEach(0 ..< values.count) { index in
+                            Text("\(self.values[index])")
+                                .font(.title)
+                                .foregroundColor(Color.blue)
+                        }
+                    }
+                }.frame(width: 100, height: 50)
+        }
 }
 
 struct chooseWaterValue_Previews: PreviewProvider {
     static var previews: some View {
-        chooseWaterValue(waterValue: .constant(5.0))
+        chooseWaterValue(waterValue: .constant(0), values: .constant([0]))
     }
 }
+

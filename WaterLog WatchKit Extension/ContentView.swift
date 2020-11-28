@@ -11,33 +11,26 @@ import HealthKit
 import UIKit
 
 struct ContentView: View {
-    @State var waterValue = 0.00
+    @State var waterValue = 0
     @State var waterTotal = 0
+    @State var values = [0,50,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,850,900,950,1000]
     
     struct customButtonStyle: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
                 .frame(width: 120, height: 50, alignment: .center)
                 .background(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.blue]), startPoint: .top, endPoint: .bottom))
-                .cornerRadius(10.0)
+                .cornerRadius(15.0)
                 .scaleEffect(configuration.isPressed ? 1.3 : 1.0)
-            
         }
     }
     
     var body: some View {
         VStack{
             Spacer()
-            HStack {
-                Text("Add water")
-                    .font(.body)
-                chooseWaterValue(waterValue: self.$waterValue)
-                Text("ml")
-            }
-                .padding(.all)
-                .border(Color.blue, width: 2)
-                .cornerRadius(5.0)
-                
+            chooseWaterValue(waterValue: $waterValue, values: $values)
+                .labelsHidden()
+            Spacer()
             Button(action:
                 {
                     if self.waterValue > 0
@@ -54,6 +47,7 @@ struct ContentView: View {
                             .foregroundColor(Color.black)
                     }
             }.buttonStyle(customButtonStyle())
+            
             VStack {
                 Text("Total Water")
                 HStack {
@@ -64,7 +58,6 @@ struct ContentView: View {
                     .font(.body)
                 }
             }
-            Spacer()
         }.onAppear(perform: { self.checkHK() })
     }
     
@@ -124,7 +117,7 @@ struct ContentView: View {
             return
         }
         
-        let waterQuantity = HKQuantity(unit: HKUnit.literUnit(with: .milli), doubleValue: Double(Int(waterValue)*10))
+        let waterQuantity = HKQuantity(unit: HKUnit.literUnit(with: .milli), doubleValue: Double(values[waterValue]))
         let waterQuantitySample = HKQuantitySample(type: waterType, quantity: waterQuantity, start: Date(), end: Date())
 
         HKHealthStore().save(waterQuantitySample) { (success, error) in
