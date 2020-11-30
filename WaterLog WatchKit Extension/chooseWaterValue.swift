@@ -14,14 +14,14 @@ struct chooseWaterValue: View {
     
             var body: some View {
                 VStack {
-                    Picker(selection: $waterValue, label: Text("Water")) {
+                    Picker(selection: $waterValue, label: Text("Add Water (ml)").foregroundColor(Color.black)) {
                         ForEach(0 ..< values.count) { index in
                             Text("\(self.values[index])")
                                 .font(.title)
-                                .foregroundColor(Color.blue)
+                                .foregroundColor(Color.black)
                         }
                     }
-                }.frame(width: 100, height: 50)
+                }.frame(width: 100, height: 45)
         }
 }
 

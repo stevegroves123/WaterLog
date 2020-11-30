@@ -18,7 +18,7 @@ struct ContentView: View {
     struct customButtonStyle: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
-                .frame(width: 120, height: 50, alignment: .center)
+                .frame(width: 120, height: 65, alignment: .center)
                 .background(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.blue]), startPoint: .top, endPoint: .bottom))
                 .cornerRadius(15.0)
                 .scaleEffect(configuration.isPressed ? 1.3 : 1.0)
@@ -27,8 +27,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            chooseWaterValue(waterValue: $waterValue, values: $values)
-                .padding(.top)
             Button(action:
                 {
                     if self.waterValue > 0
@@ -38,16 +36,13 @@ struct ContentView: View {
                     self.readWater()
             }) {
                     HStack {
-                        Image(systemName: "plus.circle")
-                            .foregroundColor(Color.black)
-                            .font(.headline)
-                        Text("Water")
-                            .foregroundColor(Color.black)
+                        chooseWaterValue(waterValue: $waterValue, values: $values)
+                            .padding(.all)
                     }
             }.buttonStyle(customButtonStyle())
             
             VStack {
-                Text("Total Water")
+                Text("Today's Water")
                 HStack {
                    Text("\(self.waterTotal)")
                     .foregroundColor(.blue)
