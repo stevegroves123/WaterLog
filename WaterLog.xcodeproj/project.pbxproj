@@ -21,11 +21,6 @@
 		4F3D841F24B4F89200A5490B /* chooseWaterValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D841E24B4F89200A5490B /* chooseWaterValue.swift */; };
 		4F3D842524B515C800A5490B /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D842424B515C800A5490B /* ComplicationController.swift */; };
 		4F3D842624B519C800A5490B /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3D842224B5113B00A5490B /* HealthKit.framework */; };
-		4F49EE0A24CC6C4900E01541 /* WaterLog in list view.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F49EE0924CC6C4900E01541 /* WaterLog in list view.png */; };
-		4F49EE0C24CC6C5800E01541 /* WaterLog complication on Circular screen .png in Resources */ = {isa = PBXBuildFile; fileRef = 4F49EE0B24CC6C5800E01541 /* WaterLog complication on Circular screen .png */; };
-		4F49EE0F24CC6C6B00E01541 /* WaterLog complication on Modular screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F49EE0D24CC6C6B00E01541 /* WaterLog complication on Modular screen.png */; };
-		4F49EE1024CC6C6B00E01541 /* WaterLog in grid view.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F49EE0E24CC6C6B00E01541 /* WaterLog in grid view.png */; };
-		4F49EE1224CC6CBE00E01541 /* WaterLog screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F49EE1124CC6CBE00E01541 /* WaterLog screen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,11 +85,6 @@
 		4F3D842024B5113B00A5490B /* WaterLog WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WaterLog WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		4F3D842224B5113B00A5490B /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		4F3D842424B515C800A5490B /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		4F49EE0924CC6C4900E01541 /* WaterLog in list view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WaterLog in list view.png"; sourceTree = "<group>"; };
-		4F49EE0B24CC6C5800E01541 /* WaterLog complication on Circular screen .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WaterLog complication on Circular screen .png"; sourceTree = "<group>"; };
-		4F49EE0D24CC6C6B00E01541 /* WaterLog complication on Modular screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WaterLog complication on Modular screen.png"; sourceTree = "<group>"; };
-		4F49EE0E24CC6C6B00E01541 /* WaterLog in grid view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WaterLog in grid view.png"; sourceTree = "<group>"; };
-		4F49EE1124CC6CBE00E01541 /* WaterLog screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WaterLog screen.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +102,6 @@
 		4F3D83DF24B3B45400A5490B = {
 			isa = PBXGroup;
 			children = (
-				4F49EE0824CC6C1C00E01541 /* Images */,
 				4F3D83EE24B3B45400A5490B /* WaterLog WatchKit App */,
 				4F3D83FD24B3B45500A5490B /* WaterLog WatchKit Extension */,
 				4F3D83E724B3B45400A5490B /* Products */,
@@ -173,18 +162,6 @@
 				4F3D842224B5113B00A5490B /* HealthKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4F49EE0824CC6C1C00E01541 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				4F49EE1124CC6CBE00E01541 /* WaterLog screen.png */,
-				4F49EE0924CC6C4900E01541 /* WaterLog in list view.png */,
-				4F49EE0B24CC6C5800E01541 /* WaterLog complication on Circular screen .png */,
-				4F49EE0D24CC6C6B00E01541 /* WaterLog complication on Modular screen.png */,
-				4F49EE0E24CC6C6B00E01541 /* WaterLog in grid view.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,11 +264,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F49EE0A24CC6C4900E01541 /* WaterLog in list view.png in Resources */,
-				4F49EE1224CC6CBE00E01541 /* WaterLog screen.png in Resources */,
-				4F49EE1024CC6C6B00E01541 /* WaterLog in grid view.png in Resources */,
-				4F49EE0C24CC6C5800E01541 /* WaterLog complication on Circular screen .png in Resources */,
-				4F49EE0F24CC6C6B00E01541 /* WaterLog complication on Modular screen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
