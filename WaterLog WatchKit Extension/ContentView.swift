@@ -8,7 +8,7 @@
 
 import SwiftUI
 import HealthKit
-import UIKit
+//import UIKit
 
 struct ContentView: View {
     @State var waterValue = 0
@@ -27,10 +27,8 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            Spacer()
             chooseWaterValue(waterValue: $waterValue, values: $values)
-                .labelsHidden()
-            Spacer()
+                .padding(.top)
             Button(action:
                 {
                     if self.waterValue > 0
