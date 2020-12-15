@@ -23,21 +23,20 @@ func getCurrentTimelineEntry(
  
     switch complication.family {
     case .modularSmall:
-//        let template = CLKComplicationTemplateModularSmallStackText()
-//        template.line1TextProvider = CLKSimpleTextProvider(text: "+W")
-//        template.line2TextProvider = CLKSimpleTextProvider(text: "TW")
         let template = CLKComplicationTemplateModularSmallSimpleImage()
         template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Complication/Modular")!)
         entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
  
     case .circularSmall:
-//        let template = CLKComplicationTemplateCircularSmallStackText()
-//        template.line1TextProvider = CLKSimpleTextProvider(text: "+W")
-//        template.line2TextProvider = CLKSimpleTextProvider(text: "TW")
         let template = CLKComplicationTemplateCircularSmallSimpleImage()
         template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Complication/Circular")!)
         entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
  
+    case .extraLarge:
+        let template = CLKComplicationTemplateExtraLargeSimpleImage()
+        template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Complication/Extra Large")!)
+        entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+    
     default:
         preconditionFailure("Complication family not supported")
     }
@@ -51,23 +50,41 @@ func getCurrentTimelineEntry(
     {
         switch complication.family {
         case .modularSmall:
-//            let template = CLKComplicationTemplateModularSmallStackText()
-//            template.line1TextProvider = CLKSimpleTextProvider(text: "+W")
-//            template.line2TextProvider = CLKSimpleTextProvider(text: "TW")
               let template = CLKComplicationTemplateModularSmallSimpleImage()
               template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Complication/Modular")!)
             handler(template)
      
         case .circularSmall:
-//            let template = CLKComplicationTemplateCircularSmallStackText()
-//            template.line1TextProvider = CLKSimpleTextProvider(text: "+W")
-//            template.line2TextProvider = CLKSimpleTextProvider(text: "TW")
             let template = CLKComplicationTemplateCircularSmallSimpleImage()
             template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Complication/Circular")!)
             handler(template)
      
-        default:
-            preconditionFailure("Complication family not supported")
+        case .modularLarge:
+            handler(nil)
+        case .utilitarianSmall:
+            handler(nil)
+        case .utilitarianSmallFlat:
+            handler(nil)
+        case .utilitarianLarge:
+            handler(nil)
+            
+        case .extraLarge:
+            let template = CLKComplicationTemplateExtraLargeSimpleImage()
+            template.imageProvider = CLKImageProvider(onePieceImage: UIImage(named: "Complication/Extra Large")!)
+            handler(template)
+            
+        case .graphicCorner:
+            handler(nil)
+        case .graphicBezel:
+            handler(nil)
+        case .graphicCircular:
+            handler(nil)
+        case .graphicRectangular:
+            handler(nil)
+        case .graphicExtraLarge:
+            handler(nil)
+        @unknown default:
+            handler(nil)
         }
     }
 }
